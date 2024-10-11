@@ -1,0 +1,26 @@
+public class Student {
+  String name;
+  int age;
+  String color;
+  String gender;
+ 
+public void display(){
+    System.out.println("Student deatails");
+    System.out.println("Name: "+name);
+    System.out.println("Age: "+age);
+    System.out.println("Color: "+color);
+    System.out.println("Gender: "+gender);
+
+}
+    Student(String n,int a,String colo,String gen){
+    name=n;
+    age=a;
+    color=colo;
+    gender=gen;
+    }
+    public static void main(String[] args) {
+        Student std1=new Student("Nimesh",22,"Brown","Male");
+        std1.display();
+    }
+    
+}

@@ -1,0 +1,30 @@
+public class Rectangle {
+double width;
+double length;
+String color;
+int recNumber;
+void display(){
+    System.out.println("Rec"+recNumber+" Deatails");
+    System.out.println("Color: "+color+"\nWidth: "+width+"\nLength: "+length);
+}
+void calculateArea(){
+double area=width*length;
+    System.out.println("Rec"+recNumber+" Area: "+area);
+
+}
+    Rectangle(double w,double l,String c,int i){
+    width=w;
+    length=l;
+    color=c;
+    recNumber=i;
+    }
+    public static void main(String[] args) {
+        Rectangle rec1=new Rectangle(5,51,"Black",1);
+        Rectangle rec2=new Rectangle(8,90,"Black",2);
+        Rectangle rec3=new Rectangle(5,10,"Black",3);
+        Rectangle rec4=new Rectangle(15,40,"Black",4);
+        rec1.display();
+        rec1.calculateArea();
+    }
+    
+}

@@ -1,0 +1,74 @@
+import java.util.Scanner;
+public class Student {
+ private String name;
+  private int[] marks;
+
+    public Student(String name,int[] marks){
+    this.name=name;
+    this.marks=marks;
+    }
+    
+   public double calculateAverage(){
+   double sum=0;
+   
+   for(int mark:marks){
+   sum+=mark;
+   }
+   return (double)sum/marks.length;
+   }
+   
+    //method to check if the student has passed
+   public boolean isPassed(){
+  return calculateAverage()>=40;
+                             }
+   
+   public void displayDetails(){
+       System.out.println("Name: "+name);
+       System.out.println("Marks: ");
+       for(int mark:marks){
+           System.out.println(mark+" ");
+       }
+       System.out.println("\nAverage Marks: "+calculateAverage());
+       System.out.println("Passed: "+(isPassed() ? "Yes" : "No"));
+   }
+   
+   public static void main(String[] args){
+       Scanner scanner=new Scanner(System.in);
+       System.out.print("Enter name of the first student: ");
+       String name1=scanner.nextLine();
+        System.out.print("Enter number of subjects for "+name1+": ");
+        int numSubjects1=scanner.nextInt();
+        int[] marks1=new int[numSubjects1];
+        System.out.println("Enter marks for "+name1+":");
+        for(int i=0; i<numSubjects1;i++){
+        marks1[i]=scanner.nextInt();
+        }
+        Student student1=new Student(name1,marks1);
+        
+        
+        System.out.print("Enter name of the second student: ");
+        String name2=scanner.nextLine();
+        System.out.print("Enter number of subjects for "+name2+": ");
+        int numSubjects2=scanner.nextInt();
+        int[] marks2=new int[numSubjects2];
+        System.out.println("Enter marks for "+name2+":");
+        for(int j=0; j<numSubjects2;j++){
+        marks2[j]=scanner.nextInt();
+        }
+        Student student2=new Student(name2,marks2);
+        
+        
+        //Display deatails for both students
+            System.out.println("\n---Student Deatails---");
+            student1.displayDetails();
+            System.out.println();
+            student2.displayDetails();
+            
+            
+        
+       
+       
+       
+   }
+   
+}

@@ -1,0 +1,26 @@
+//Abstract class
+abstract class Animal {
+    //Abstract method(does not have a body)
+    public abstract void animalSound();
+    //Regular method
+    public void sleep(){
+        System.out.println("Zzz");
+    } 
+}
+
+//subcalss
+
+class Pig extends Animal{
+    @Override
+    public void animalSound(){
+        System.out.println("The pig says: wee wee");
+    }
+}
+
+class Main{
+public static void main(String[] args){
+Pig mypig=new Pig();
+mypig.animalSound();
+mypig.sleep();
+}
+}

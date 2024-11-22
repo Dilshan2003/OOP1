@@ -1,0 +1,75 @@
+import java.util.Scanner;
+abstract class Shape {
+  public abstract void calculate();
+  public abstract void display(); 
+}
+
+class Rectangle extends Shape{
+    
+    private double length,width,area,perimeter;
+    Rectangle(double length,double width){
+    this.length=length;
+    this.width=width;}
+    
+  public void calculate(){
+   area=length*width;
+   perimeter=2*(length+width);
+   }
+
+   public void display(){
+       System.out.println("Area of rectangle :"+area);
+       System.out.println("Perimeter of rectangle :"+perimeter);
+   
+   }
+}
+
+
+class TriangularPyramid extends Shape{
+   private double baseLength,baseWidth,height,surfaceArea,volume;
+    
+   public TriangularPyramid(double baseLength,double baseWidth,double height){
+   this.baseLength=baseLength;
+   this.baseWidth=baseWidth;
+   this.height=height;
+   
+   }
+   @Override
+   public void calculate(){
+   double baseArea=0.5*baseLength*baseWidth;
+   double slantHeight=Math.sqrt(Math.pow(height, 2)+Math.pow(baseWidth/2.0, 2));
+   double lateralArea=(baseLength+baseWidth+baseWidth)*slantHeight/2;
+   this.surfaceArea=baseArea+lateralArea;
+   this.volume=(1.0/3.0)*baseArea*height;
+   }
+   @Override
+ public void display(){
+       System.out.println("Surface area of TriangularPyramid :"+surfaceArea);
+       System.out.println("TriangularPyramid volume :"+volume);
+}
+}
+
+public class Main{
+ public static void main(String[] args) {
+ Scanner x =new Scanner(System.in);
+ 
+     System.out.print("Enter the lengh of the rectangle: ");
+     double rectLength=x.nextDouble();
+     System.out.print("Enter the width of the rectangle: ");
+     double rectWidth=x.nextDouble();
+     Shape rectangle =new Rectangle(rectLength,rectWidth);
+     rectangle.calculate();
+     rectangle.display();
+     
+     System.out.print("\nEnter the base lengh of the triangular pyramid: ");
+     double baseLength=x.nextDouble();
+     System.out.print("Enter the base width of the triangular pyramid: ");
+     double baseWidth=x.nextDouble();
+     System.out.print("Enter the base height of the triangular pyramid: ");
+     double height=x.nextDouble();
+     Shape pyramid=new TriangularPyramid(baseLength,baseWidth,height);
+     pyramid.calculate();
+     pyramid.display();
+ }
+
+
+}

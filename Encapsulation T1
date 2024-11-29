@@ -1,0 +1,41 @@
+public class BankAccount {
+ private String name;
+private int number;
+private double balance;
+  
+    public  void setName(String name) {
+       this.name=name;
+    }
+    public String getName(){
+    return name;
+    }
+    public  void setNumber(int number) {
+       this.number=number;
+    }
+    public int getNumber(){
+    return number;
+    }
+    public  void setBalance(double balance) {
+       this.balance=balance;
+    }
+    public double getBalace(){
+    return balance;
+    }  
+    
+}
+
+
+public class Encapsulation {
+   
+public static void main(String[] args){
+
+BankAccount b=new BankAccount();
+       b.setName("kamal");
+       System.out.println("Name: "+b.getName());
+        b.setNumber(44); 
+       System.out.println("Number: "+b.getNumber());
+        b.setBalance(52000.11);
+       System.out.println("Balance: "+b.getBalace());
+
+}
+}

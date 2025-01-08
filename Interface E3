@@ -1,0 +1,28 @@
+//Interface 1
+public interface FirstInterface {
+    public abstract void myMethod();
+}
+// Interface 2
+public interface SecondInterface {
+    public abstract void myOtherMethod();
+}
+
+public class DemoClass implements FirstInterface,SecondInterface {
+    public void myMethod(){
+        System.out.println("Some text...");
+    }
+    
+    public void myOtherMethod(){
+        System.out.println("Some other text ...");
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        DemoClass myobj=new DemoClass();
+        myobj.myMethod();
+        myobj.myOtherMethod();
+    }
+    
+}
